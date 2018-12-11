@@ -35,19 +35,12 @@
 
   <!-- Optional JavaScript -->
 
-<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyC20NGps5ahAfQ4ybRbTtLTyAQ5GTpe_Z0",
-    authDomain: "dcinsites-demo.firebaseapp.com",
-    databaseURL: "https://dcinsites-demo.firebaseio.com",
-    projectId: "dcinsites-demo",
-    storageBucket: "",
-    messagingSenderId: "96218923859"
-  };
-  firebase.initializeApp(config);
-</script>
+  <!-- STRIPE.js -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script type="text/javascript">
+    var stripe = Stripe('pk_test_XXXXXXXXXXXXXXXXX'); // use your test publishable key
+    var elements = stripe.elements();
+  </script>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

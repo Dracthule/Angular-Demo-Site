@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +15,6 @@ import { StoreComponent } from './main/store/store.component';
 import { SocialComponent } from './main/social/social.component';
 import { MiscComponent } from './main/misc/misc.component';
 import { PortfolioComponent } from './main/portfolio/portfolio.component';
-import { PaymentsComponent } from './main/payments/payments.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +29,12 @@ import { PaymentsComponent } from './main/payments/payments.component';
     StoreComponent,
     SocialComponent,
     MiscComponent,
-    PortfolioComponent,
-    PaymentsComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
