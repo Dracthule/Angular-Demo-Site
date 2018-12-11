@@ -1,6 +1,6 @@
-import { environment } from './../../../../environments/environment.prod';
+import { environment } from './../../../../environments/environment';
 import { StripeService } from './../stripe.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-make-stripe-payment',
@@ -9,15 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MakeStripePaymentComponent implements OnInit {
   handler: any;
-  amount = 500;
+  amount = 40000;
 
   constructor(private stripeSvc: StripeService) { }
 
   ngOnInit() {
     this.handler = StripeCheckout.configure({
       key: environment.stripeKey,
-      image: '',
-    })
+      image: '/src/assets/logo-FULL.png',
+      locale: 'auto',
+      token: token => {
+        this.stripeSvc.processPayment(token, this.amount)
+      }
+    });
+  }
+
+  handlePayment() {
+    this.handler.open({
+      name: 'DCinsites',
+      excerpt: 'Pay Invoice',
+      amount: this.amount
+    });
+  }
+
+  @HostListener('window:popstate')
+  onPopstate() {
+    this.handler.close()
   }
 
 }

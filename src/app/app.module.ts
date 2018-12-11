@@ -1,7 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
 
+
+
+import { environment } from "../environments/environment";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -15,6 +21,7 @@ import { StoreComponent } from './main/store/store.component';
 import { SocialComponent } from './main/social/social.component';
 import { MiscComponent } from './main/misc/misc.component';
 import { PortfolioComponent } from './main/portfolio/portfolio.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -34,7 +41,10 @@ import { PortfolioComponent } from './main/portfolio/portfolio.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
