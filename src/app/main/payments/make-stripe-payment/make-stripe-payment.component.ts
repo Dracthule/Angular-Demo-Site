@@ -1,3 +1,5 @@
+import { environment } from './../../../../environments/environment.prod';
+import { StripeService } from './../stripe.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./make-stripe-payment.component.css']
 })
 export class MakeStripePaymentComponent implements OnInit {
+  handler: any;
+  amount = 500;
 
-  constructor() { }
+  constructor(private stripeSvc: StripeService) { }
 
   ngOnInit() {
+    this.handler = StripeCheckout.configure({
+      key: environment.stripeKey,
+      image: '',
+    })
   }
 
 }
