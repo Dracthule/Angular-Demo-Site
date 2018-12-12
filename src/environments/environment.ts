@@ -4,14 +4,12 @@
 
 export const environment = {
   production: false,
-  stripeKey: 'YOUR_STRIPE_TEST_KEY',
+  name: 'DCinsites',
+  stripeKey: "pk_test_zLEAXxr23Cq78X2R3maILaSf",
   // Initialize Firebase
-  apiKey: 'AIzaSyARZEP1zeV8Ci9vhcYmV4qU8xMSaszi_7w',
-  authDomain: 'dci-test-site.firebaseapp.com',
-  databaseURL: 'https://dci-test-site.firebaseio.com',
-  projectId: 'dci-test-site',
-  storageBucket: 'dci-test-site.appspot.com',
-  messagingSenderId: '886523916646'
+  firebase: {
+    apiKey: "AIzaSyARZEP1zeV8Ci9vhcYmV4qU8xMSaszi_7w", authDomain: "dci-test-site.firebaseapp.com", databaseURL: "https://dci-test-site.firebaseio.com", projectId: "dci-test-site", storageBucket: "dci-test-site.appspot.com", messagingSenderId: "886523916646"
+  }
 };
 
 /*
